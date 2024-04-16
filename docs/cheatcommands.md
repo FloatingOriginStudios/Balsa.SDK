@@ -20,19 +20,19 @@ Most cheats can also be turned off, by following the command with the word 'off'
 
 Command | Description
 ------|--------
-`/warhead` | Unlimited ammo
-`/kragle` | Vehicle is unbreakable
+`/warhead` | Unlimited ammo.
+`/kragle` | Vehicle is unbreakable.
 `/runsonfumes` | Engines continue to run after Fuel/Battery runs out
 `/inthrustwetrust` | Thrust output multiplier: 3x
 `/jebediah` | Thrust output multiplier: 10x
 `/grabbity` | Player disregards the third law of motion and can jump while airborne.
 `/import antigravity` | The player ignores the effects of gravity while jumping, until the `Jump` key is released.
 `/pocketknife` | Open the vehicle editor immediately, wherever the player is.
-`/ask mr ari` | Starts the Editor Walkthrough tutorial (deprecated, probably no longer functional. You probably shouldn't use this one)
-`/instructable me` | Starts the Intro Walkthrough tutorial 
-`/me is dev` | Enable developer tools
-`/faraday ####` | Set the Radio TX range to #### meters
-`/reset` | Turn off all cheats (except developer tools)
-
+`/me is dev` | Enable developer tools.
+`/faraday ####` | Set the Radio TX range to #### meters.
+`/reset` | Turn off all cheats. (except developer tools)
+`/jailbreak` | Debug workaround for controls getting locked in the editor for whatever reason.
+`/midichlorians` | Physics forces visualization.
+`/i see dead pixels` | Vehicle Volumetrics visualization. (outdoor use only)
 
 
