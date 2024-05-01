@@ -14,9 +14,9 @@ namespace KitHackPluginTest
 		public override void OnShow(Action proceed)
 		{
 			PopupDialog.Create("Addon Test",
-				"This message is brought to you by BalsaAddonTest.dll, for all your addon testing needs!"
+				"This message is brought to you by KitHackAddonTest.dll, for all your addon testing needs!"
 				+ "\n\n"
-				+ ("Check out this plugin's source code in the Balsa.SDK, available on Github.".RTColor(BalsaColors.TrainingBlue).RTSizePct(80f))
+				+ ("Check out this plugin's source code in the KitHack.SDK, available on Github.".RTColor(BalsaColors.TrainingBlue).RTSizePct(80f))
 
 				, IconSprite.Info, BalsaColors.TrainingBlue,
 					new PopupDialogOption("Cool", proceed),
