@@ -1,10 +1,12 @@
 ﻿
+using FloatingUtil;
+
 using UI;
 using UI.MMX.Data;
 
 using UnityEngine;
 
-namespace BalsaPluginTest
+namespace KitHackPluginTest
 {
 	public class FloatingMMXUITest : MonoBehaviour
 	{

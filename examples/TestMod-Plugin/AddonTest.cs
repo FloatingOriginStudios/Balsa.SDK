@@ -4,7 +4,7 @@ using System.Linq;
 
 using UnityEngine;
 
-namespace BalsaPluginTest
+namespace KitHackPluginTest
 {
 
 	[BalsaCore.BalsaAddon]

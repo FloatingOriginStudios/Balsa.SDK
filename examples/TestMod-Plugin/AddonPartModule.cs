@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Mirror;
+
+using System;
+
 using System.Linq;
 
 using UnityEngine;
-using UnityEngine.Networking;
 
-namespace BalsaPluginTest
+namespace KitHackPluginTest
 {
 
 	public class AddonPartModule : Modules.PartModule
@@ -13,7 +15,7 @@ namespace BalsaPluginTest
 		 * use this module (defined in their .cfg files)
 		 */
 
-		/* PartModules in Balsa inherit from NetworkedBehaviour, so SyncVar fields here will work.
+		/* PartModules in KitHack inherit from NetworkedBehaviour, so SyncVar fields here will work.
 		 */
 		[SyncVar]
 		public int someValue;
@@ -35,7 +37,7 @@ namespace BalsaPluginTest
 		[CfgField(CfgFields.CfgContext.Config)]
 		protected float aCfgDefinedValue;
 
-		public override void OnModuleSpawn()
+		public override void OnModuleSpawn(bool spawnedAsClone = false)
 		{
 			Debug.Log("[AddonTestPartModule]: w00t!");
 		}

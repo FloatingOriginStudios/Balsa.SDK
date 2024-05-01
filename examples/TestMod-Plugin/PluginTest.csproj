@@ -7,8 +7,8 @@
     <ProjectGuid>{B962F549-5A0E-4140-B7F6-38D5E5559F00}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BalsaPluginTest</RootNamespace>
-    <AssemblyName>BalsaPluginTest</AssemblyName>
+    <RootNamespace>KitHackPluginTest</RootNamespace>
+    <AssemblyName>KitHackPluginTest</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -42,18 +42,13 @@
     <Reference Include="Balsa.Core">
       <HintPath>..\..\..\balsa\balsa\build\Balsa_Data\Managed\Balsa.Core.dll</HintPath>
     </Reference>
-    <Reference Include="com.unity.multiplayer-hlapi.Runtime">
-      <HintPath>..\..\..\balsa\balsa\build\balsa_Data\Managed\com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Facepunch.Steamworks.Win64">
-      <HintPath>..\..\..\balsa\balsa\build\Balsa_Data\Managed\Facepunch.Steamworks.Win64.dll</HintPath>
-    </Reference>
     <Reference Include="FloatingUtil">
       <HintPath>..\..\..\balsa\balsa\build\Balsa_Data\Managed\FloatingUtil.dll</HintPath>
     </Reference>
     <Reference Include="FloatingUtil.Networking">
       <HintPath>..\..\..\balsa\balsa\build\balsa_Data\Managed\FloatingUtil.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="Mirror, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -87,7 +82,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(SolutionDir)$(OutDir)$(TargetFileName)" "$(SolutionDir)..\BalsaPluginTestModFolder\$(TargetFileName)"
-copy /Y "$(SolutionDir)$(OutDir)$(TargetName).pdb" "$(SolutionDir)..\BalsaPluginTestModFolder\$(TargetName).pdb"</PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(SolutionDir)$(OutDir)$(TargetFileName)" "$(SolutionDir)..\TestModFolder\$(TargetFileName)"
+copy /Y "$(SolutionDir)$(OutDir)$(TargetName).pdb" "$(SolutionDir)..\TestModFolder\$(TargetName).pdb"</PostBuildEvent>
   </PropertyGroup>
 </Project>

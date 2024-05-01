@@ -1,7 +1,8 @@
 ﻿using System;
+
 using UI;
 
-namespace BalsaPluginTest
+namespace KitHackPluginTest
 {
 	[UI.MenuMessage]
 	public class MenuMessageTest : UI.MenuMessageBase
@@ -9,7 +10,7 @@ namespace BalsaPluginTest
 		/* Menu messages are displayed as the game is starting up. (eg, the Early Access warning message is a MenuMessage)
 		 * You can define your own messages by creating subclasses of UI.MenuMessageBase and using the MenuMessage attribute 
 		 */
-		 
+
 		public override void OnShow(Action proceed)
 		{
 			PopupDialog.Create("Addon Test",
@@ -31,10 +32,10 @@ namespace BalsaPluginTest
 			// calling explorer with an url opens it in the default browser. Use this new power responsibly!
 			//System.Diagnostics.Process.Start("explorer.exe", "https://floatingorigininteractive.github.io/Balsa.SDK");
 
-			// Alternatively, you can use Steam's internal browser in the overlay.
+			// Alternatively, you can use Steam's own browser.
 			if (BalsaAddons.Steam.SteamworksSetup.Init)
 			{
-				Steamworks.SteamFriends.OpenWebOverlay("https://floatingorigininteractive.github.io/Balsa.SDK");
+				System.Diagnostics.Process.Start("\"steam://openurl/https://floatingorigininteractive.github.io/Balsa.SDK");
 			}
 		}
 	}

@@ -1,5 +1,7 @@
 ﻿using CfgFields;
 
+using Mirror;
+
 using Scenarios;
 using Scenarios.Data;
 
@@ -8,10 +10,7 @@ using System.Collections.Generic;
 
 using UI.MMX.Data;
 
-
-using UnityEngine.Networking;
-
-namespace BalsaPlugin
+namespace KitHackPluginTest
 {
 
 	/*  You can also create new Scenario Modules in Plugins. 
@@ -150,12 +149,13 @@ namespace BalsaPlugin
 
 
 			// if your module stores paths to any external files, you should override this method and add it as a MissionExternalAsset to the list.
-			// this is used when publishing mods, to pack up any external assets that can't be resolved to a game asset (or another mod's asset), so it gets uploaded with the mission files.
+			// this is used when saving missions and later publishing, to pack up any external assets that can't be resolved to a game asset (or another mod's asset).
+			// Packing copies the asset file to the mission's own folder (if needed), and updates the filepath to point to the new copy.
 			protected override void OnGatherExternalAssets(List<MissionExternalAsset> exts)
 			{
 				// no need to call base here. 
 
-				exts.Add(new MissionExternalAsset(aPersistentObject.aPersistentString_CouldBeAFilePath, (str) =>
+				exts.Add(new MissionExternalAsset(mission, aPersistentObject.aPersistentString_CouldBeAFilePath, (str) =>
 				{
 					// if the packing process for the mission does end up moving files around, just make sure to update your original value here.
 					aPersistentObject.aPersistentString_CouldBeAFilePath = str;
@@ -196,7 +196,7 @@ namespace BalsaPlugin
 
 
 
-					// when working with filepaths (as shown above), you can use this method to resolve the path to a full one.					
+					// when working with filepaths (as shown above), you can use this method to resolve the saved path to a full one.					
 					string fullPath = MissionPackingUtil.ResolveMissionAssetPath(mData.mission, data.aPersistentObject.aPersistentString_CouldBeAFilePath);
 				}
 			}
@@ -238,7 +238,7 @@ namespace BalsaPlugin
 
 
 		// Use the CfgFieldUtil methods to autoamtically save and load any CfgField attributed fields in your own types. 
-		// You can also save and load values 'manually'
+		// You can also save and load values 'manually' using the ConfigNode methods, if you need to.
 		public void Save(ConfigNode node, CfgContext context) => CfgFieldUtil.SaveCfgFields(node, this, context);
 		public void Load(ConfigNode node, CfgContext context) => CfgFieldUtil.TryLoadCfgFields(node, this, context);
 	}

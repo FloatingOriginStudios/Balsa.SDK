@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace BalsaPluginTest
+namespace KitHackPluginTest
 {
 	[Construction.EditorTool(name = "Mod Editor Tool", order = 99)]
 	public class ModEditorToolTest : Construction.Tool
